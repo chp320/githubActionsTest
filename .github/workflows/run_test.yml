@@ -1,0 +1,21 @@
+name: Run test.py every hour
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.7.2
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.7.2'
+
+      - name: Run test.py
+        run: python test.py
