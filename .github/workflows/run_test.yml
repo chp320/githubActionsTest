@@ -2,7 +2,7 @@ name: Run test.py every hour
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0/5 * * * *'         # 매시각 시작해서 5분 주기로 스케줄링 설정
 
 jobs:
   run-python-script:
